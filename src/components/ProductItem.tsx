@@ -1,6 +1,7 @@
 import { useCart } from "../feature/ContextProvider";
 import { ProductType } from "../types/ProductType";
 
+
 const ProductItem = ({ product }: { product: ProductType }) => {
   const { dispatch } = useCart();
 

@@ -1,12 +1,14 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 
 const ButtonNav = () => {
   return (
     <StyledWrapper>
       <div className="nav">
+  
         <div className="container">
-          <button className="btn">Home</button>
-          <button className="btn">Contact</button>
+          <Link to="/" className="btn">Home</Link>
+          <Link to="/contact" className="btn">Contact</Link>
           <button className="btn">About</button>
           <button className="btn">Privacy</button>
           <svg className="outline" overflow="visible" width={400} height={60} viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">

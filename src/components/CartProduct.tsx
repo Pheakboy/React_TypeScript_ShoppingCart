@@ -1,65 +1,32 @@
-const CartProduct = ({product}) => {
+import { useCart } from "../feature/ContextProvider";
+import { CartItem } from "../feature/ContextProvider";
+
+const CartProduct = ({ product }: { product: CartItem }) => {
+  const { dispatch } = useCart();
+
   return (
-    <ul className="space-y-4">
-      <li className="flex items-center gap-4">
-        <img
-          src={product.thumbnail}
-          alt=""
-          className="size-16 rounded-sm object-cover"
-        />
+    <div className="p-4 bg-white shadow-md rounded-lg flex items-center gap-6 border border-gray-200">
+      <img
+        src={product.thumbnail}
+        alt={product.title}
+        className="w-24 h-24 rounded-md object-cover border"
+      />
 
-        <div>
-          <h3 className="text-sm text-gray-900">{product.name}</h3>
+      <div className="flex-1">
+        <h3 className="text-lg font-semibold text-gray-900">{product.title}</h3>
+        <p className="text-gray-700 text-sm mt-1">Price: ${product.price}</p>
 
-          <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
-            <div>
-              <dt className="inline">Price: {product.price}</dt>
-            </div>
-
-            <div>
-              <dt className="inline">Color:</dt>
-              <dd className="inline">White</dd>
-            </div>
-          </dl>
+        <div className="flex items-center mt-3 space-x-4">
+          <button onClick={() => dispatch({ type: "DECREASE", id: product.id })} className="w-8 h-8 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">-</button>
+          <span>{product.quantity}</span>
+          <button onClick={() => dispatch({ type: "INCREASE", id: product.id })} className="w-8 h-8 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">+</button>
         </div>
+      </div>
 
-        <div className="flex flex-1 items-center justify-end gap-2">
-          <form>
-            <label htmlFor="Line3Qty" className="sr-only">
-              {" "}
-              Quantity{" "}
-            </label>
-
-            <input
-              type="number"
-              min="1"
-              value="1"
-              id="Line3Qty"
-              className="h-8 w-12 rounded-sm border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-hidden [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
-            />
-          </form>
-
-          <button className="text-gray-600 transition hover:text-red-600 cursor-pointer ">
-            <span className="sr-only">Remove item</span>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-6 ml-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-              />
-            </svg>
-          </button>
-        </div>
-      </li>
-    </ul>
+      <button onClick={() => dispatch({ type: "REMOVE", id: product.id })} className="text-red-600 hover:text-red-800 transition">
+        Remove
+      </button>
+    </div>
   );
 };
 

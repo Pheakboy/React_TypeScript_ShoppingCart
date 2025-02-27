@@ -1,11 +1,10 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import ContextProvider from './feature/ContextProvider.tsx'
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+import { CartProvider } from "./feature/ContextProvider.tsx";
 
-
-createRoot(document.getElementById('root')!).render(
-  <ContextProvider>
+createRoot(document.getElementById("root")!).render(
+  <CartProvider>
     <App />
-  </ContextProvider>
-)
+  </CartProvider>
+);

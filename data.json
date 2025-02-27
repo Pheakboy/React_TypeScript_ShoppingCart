@@ -2,7 +2,7 @@
   "Products": [
     {
       "id": 1,
-      "title": "Apple MacBook Pro 14 Inch Space Grey",
+      "title": "Apple MacBook Pro 14 Inch",
       "price": 1999.99,
       "quantity": 1,
       "total": 3999.98,
@@ -59,6 +59,106 @@
       "discountPercentage": 11.24,
       "discountedTotal": 35.47,
       "thumbnail": "https://cdn.dummyjson.com/products/images/sports-accessories/Golf%20Ball/thumbnail.png"
+    },
+    {
+      "id": 187,
+      "title": "Golden Shoes Woman",
+      "price": 49.99,
+      "quantity": 5,
+      "total": 249.95,
+      "discountPercentage": 1.64,
+      "discountedTotal": 245.85,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/womens-shoes/Golden%20Shoes%20Woman/thumbnail.png"
+    },
+    {
+      "id": 40,
+      "title": "Strawberry",
+      "price": 3.99,
+      "quantity": 5,
+      "total": 19.95,
+      "discountPercentage": 4.6,
+      "discountedTotal": 19.03,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Strawberry/thumbnail.png"
+    },
+    {
+      "id": 156,
+      "title": "Green and Black Glasses",
+      "price": 34.99,
+      "quantity": 5,
+      "total": 174.95,
+      "discountPercentage": 4.34,
+      "discountedTotal": 167.36,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Green%20and%20Black%20Glasses/thumbnail.png"
+    },
+    {
+      "id": 62,
+      "title": "Ice Cube Tray",
+      "price": 5.99,
+      "quantity": 2,
+      "total": 11.98,
+      "discountPercentage": 8.25,
+      "discountedTotal": 10.99,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/kitchen-accessories/Ice%20Cube%20Tray/thumbnail.png"
+    },
+    {
+      "id": 108,
+      "title": "iPhone 12 Silicone Case with MagSafe Plum",
+      "price": 29.99,
+      "quantity": 2,
+      "total": 59.98,
+      "discountPercentage": 14.68,
+      "discountedTotal": 51.17,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/thumbnail.png"
+    },
+    {
+      "id": 138,
+      "title": "Baseball Ball",
+      "price": 8.99,
+      "quantity": 5,
+      "total": 44.95,
+      "discountPercentage": 18.49,
+      "discountedTotal": 36.64,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/sports-accessories/Baseball%20Ball/thumbnail.png"
+    },
+    {
+      "id": 157,
+      "title": "Party Glasses",
+      "price": 19.99,
+      "quantity": 2,
+      "total": 39.98,
+      "discountPercentage": 19.17,
+      "discountedTotal": 32.32,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/thumbnail.png"
+    },
+    {
+      "id": 8,
+      "title": "Dior J'adore",
+      "price": 89.99,
+      "quantity": 3,
+      "total": 269.97,
+      "discountPercentage": 10.79,
+      "discountedTotal": 240.84,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Dior%20J'adore/thumbnail.png"
+    },
+    {
+      "id": 80,
+      "title": "Huawei Matebook X Pro",
+      "price": 1399.99,
+      "quantity": 5,
+      "total": 6999.95,
+      "discountPercentage": 9.99,
+      "discountedTotal": 6300.65,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/thumbnail.png"
+    },
+    {
+      "id": 28,
+      "title": "Ice Cream",
+      "price": 5.49,
+      "quantity": 3,
+      "total": 16.47,
+      "discountPercentage": 10,
+      "discountedTotal": 14.82,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Ice%20Cream/thumbnail.png"
     }
   ]
 }

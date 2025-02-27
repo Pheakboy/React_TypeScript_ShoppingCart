@@ -1,35 +1,46 @@
-import { createContext, useReducer, ReactNode, Dispatch } from "react";
+import {
+  createContext,
+  useReducer,
+  ReactNode,
+  Dispatch,
+  useContext,
+} from "react";
 import CartReducer from "./CartReducer";
+import { ProductType } from "../types/ProductType";
 
-// Define types for cart items
-export type CartItem = {
-  id: number;
-  title: string;
-  price: number;
-  quantity: number;
-  thumbnail: string;
-};
+// Define cart item type
+export type CartItem = Omit<
+  ProductType,
+  "total" | "discountPercentage" | "discountedTotal"
+>;
 
-// Define state type
 export type CartState = CartItem[];
 
-// Define action types
 export type CartAction =
   | { type: "ADD"; product: CartItem }
   | { type: "REMOVE"; id: number }
   | { type: "INCREASE"; id: number }
   | { type: "DECREASE"; id: number };
 
-// Define context type
 interface CartContextType {
   cart: CartState;
   dispatch: Dispatch<CartAction>;
 }
 
-// Create context with type
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+// Create context with undefined as default
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const ContextProvider = ({ children }: { children: ReactNode }) => {
+// ✅ Safe custom hook to prevent undefined context errors
+export const useCart = (): CartContextType => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+};
+
+// Provider component
+const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, dispatch] = useReducer(CartReducer, []);
 
   return (
@@ -39,4 +50,4 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default ContextProvider;
+export { CartContext, CartProvider };

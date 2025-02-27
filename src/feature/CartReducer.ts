@@ -1,4 +1,18 @@
-import { CartState, CartAction } from "./ContextProvider";
+export type CartItem = {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  thumbnail: string;
+};
+
+export type CartState = CartItem[];
+
+export type CartAction =
+  | { type: "ADD"; product: CartItem }
+  | { type: "REMOVE"; id: number }
+  | { type: "INCREASE"; id: number }
+  | { type: "DECREASE"; id: number };
 
 const CartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -6,7 +20,9 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
       const existingItem = state.find((item) => item.id === action.product.id);
       if (existingItem) {
         return state.map((item) =>
-          item.id === action.product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === action.product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       } else {
         return [...state, { ...action.product, quantity: 1 }];

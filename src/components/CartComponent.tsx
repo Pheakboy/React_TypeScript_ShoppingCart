@@ -1,10 +1,12 @@
 import { useCart } from "../feature/ContextProvider";
 import CartProduct from "./CartProduct";
+import { Link } from "react-router-dom";
 
 const CartComponent = () => {
   const { cart } = useCart();
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <section>
@@ -27,11 +29,16 @@ const CartComponent = () => {
                   <span>Total</span>
                   <span>${total.toFixed(2)}</span>
                 </div>
+                <div className="flex justify-between text-lg font-bold">
+                  <span>TotalItem</span>
+                  <span>{totalItems}</span>
+                </div>
 
                 <div className="flex justify-end">
-                  <button className="block rounded-sm bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600">
+                  <Link to = "/cart/checkout"
+                   className="block rounded-sm bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600">
                     Checkout
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
